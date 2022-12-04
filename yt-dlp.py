@@ -18,6 +18,12 @@ while True:
         break
 
 
-for links in link:
-    terminal(f'yt-dlp -f "bestvideo+bestaudio/best" {links}')
+type = input("[V]ideo or [A]udio?: ").lower
 
+if type == "v":
+    for links in link:
+        terminal(f'yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[mp4]" {links}')
+
+else:
+    for links in link:
+        terminal(f'yt-dlp -f "bestaudio[ext=m4a]" {links}')
